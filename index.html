@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biomech Wild Studio</title>
+  <style>
+    :root {
+      --bg: #0d0f12;
+      --panel: #151920;
+      --panel-2: #1b2029;
+      --line: #2a3240;
+      --text: #edf1f5;
+      --muted: #98a2b3;
+      --soft: #c8d0dc;
+      --green: #65d6a4;
+      --blue: #7bb7ff;
+      --violet: #a993ff;
+      --amber: #f5bf67;
+      --danger: #ff8b8b;
+      --shadow: 0 22px 70px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(101,214,164,.12), transparent 26rem),
+        radial-gradient(circle at 90% 8%, rgba(123,183,255,.10), transparent 24rem),
+        linear-gradient(180deg, #0d0f12 0%, #11141a 100%);
+      color: var(--text);
+    }
+    button, input { font: inherit; }
+    .shell { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+    .side {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 28px 22px;
+      border-right: 1px solid rgba(255,255,255,.08);
+      background: rgba(13,15,18,.76);
+      backdrop-filter: blur(20px);
+    }
+    .brand { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; }
+    .mark {
+      width: 44px; height: 44px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(101,214,164,.24), rgba(123,183,255,.18));
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--green);
+      font-weight: 800;
+    }
+    .brand h1 { font-size: 1rem; margin: 0; letter-spacing: 0; }
+    .brand p { margin: 2px 0 0; color: var(--muted); font-size: .82rem; }
+    .stats { display: grid; gap: 10px; margin-bottom: 22px; }
+    .stat {
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,.035);
+    }
+    .stat b { display:block; font-size: 1.45rem; line-height: 1; margin-bottom: 4px; }
+    .stat span { color: var(--muted); font-size: .8rem; }
+    .tabs { display: grid; gap: 8px; }
+    .tab {
+      width: 100%;
+      text-align: left;
+      padding: 11px 12px;
+      color: var(--soft);
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+    }
+    .tab:hover, .tab.active {
+      border-color: rgba(101,214,164,.35);
+      background: rgba(101,214,164,.08);
+      color: var(--text);
+    }
+    .main { padding: 30px; }
+    .hero {
+      min-height: 210px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 20px;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(101,214,164,.18), rgba(123,183,255,.10)),
+        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: end;
+      margin-bottom: 18px;
+    }
+    .hero h2 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 4.5rem); line-height: .95; letter-spacing: 0; }
+    .hero p { max-width: 760px; margin: 0; color: var(--soft); font-size: 1rem; }
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) auto;
+      gap: 12px;
+      margin: 0 0 18px;
+    }
+    .search {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      outline: none;
+    }
+    .search:focus { border-color: rgba(101,214,164,.65); }
+    .ghost {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      color: var(--soft);
+      background: rgba(255,255,255,.045);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 14px; }
+    .card {
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      overflow: hidden;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+    }
+    .cardTop {
+      min-height: 92px;
+      padding: 16px;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(101,214,164,.22), transparent 8rem),
+        linear-gradient(135deg, rgba(123,183,255,.10), rgba(169,147,255,.08));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .meta { display:flex; justify-content:space-between; gap:10px; color: var(--muted); font-size: .78rem; margin-bottom: 10px; }
+    .card h3 { margin: 0; font-size: 1.15rem; letter-spacing: 0; }
+    .hook { margin: 8px 0 0; color: var(--soft); font-style: italic; font-size: .92rem; }
+    .body { padding: 14px 16px 16px; display:flex; flex-direction:column; gap: 10px; flex: 1; }
+    .pill {
+      align-self: flex-start;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: .76rem;
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--soft);
+      background: rgba(255,255,255,.045);
+    }
+    .pill.active { color: var(--amber); border-color: rgba(245,191,103,.35); }
+    .pill.ready { color: var(--green); border-color: rgba(101,214,164,.38); }
+    .pill.published { color: var(--blue); border-color: rgba(123,183,255,.38); }
+    .buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: auto; }
+    .actions { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
+    .copy {
+      min-height: 38px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 10px;
+      background: rgba(255,255,255,.055);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .copy:hover { border-color: rgba(101,214,164,.5); background: rgba(101,214,164,.10); }
+    .readyButton {
+      min-height: 42px;
+      border: 1px solid rgba(101,214,164,.55);
+      border-radius: 10px;
+      background: rgba(101,214,164,.16);
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 650;
+    }
+    .readyButton:hover { background: rgba(101,214,164,.24); }
+    .readyButton:disabled { opacity: .55; cursor: wait; }
+    .empty {
+      border: 1px dashed rgba(255,255,255,.14);
+      border-radius: 16px;
+      padding: 38px;
+      color: var(--muted);
+      text-align: center;
+      background: rgba(255,255,255,.03);
+    }
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(24px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #edf1f5;
+      color: #11141a;
+      transition: .2s ease;
+      box-shadow: var(--shadow);
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    @media (max-width: 820px) {
+      .shell { grid-template-columns: 1fr; }
+      .side { position: relative; height: auto; }
+      .main { padding: 18px; }
+      .toolbar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="side">
+      <div class="brand">
+        <div class="mark">BW</div>
+        <div>
+          <h1>Biomech Wild Studio</h1>
+          <p>контент-фабрика видов</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="totalCount">0</b><span>всего карточек</span></div>
+        <div class="stat"><b id="activeCount">0</b><span>новые / в работе</span></div>
+        <div class="stat"><b id="readyCount">0</b><span>готово к публикации</span></div>
+        <div class="stat"><b id="publishedCount">0</b><span>опубликовано</span></div>
+      </div>
+      <nav class="tabs">
+        <button class="tab active" data-tab="active">Новые</button>
+        <button class="tab" data-tab="ready">Готово</button>
+        <button class="tab" data-tab="published">Опубликовано</button>
+        <button class="tab" data-tab="all">Все</button>
+      </nav>
+    </aside>
+    <main class="main">
+      <section class="hero">
+        <h2>Biomech Wild</h2>
+        <p>Управляй идеями, промптами, подписями и публикациями в одном красивом интерфейсе. Новые карточки не тонут среди готовых.</p>
+      </section>
+      <div class="toolbar">
+        <input id="search" class="search" placeholder="Поиск по виду, хуку, среде, промпту..." />
+        <button id="refresh" class="ghost">Обновить вид</button>
+      </div>
+      <section id="grid" class="grid"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast">Скопировано</div>
+  <script>
+    let cards = [];
+    let currentTab = "active";
+    let query = "";
+
+    const groupText = { active: "Новые", ready: "Готово", published: "Опубликовано" };
+
+    function count(group) {
+      return cards.filter(card => card.group === group).length;
+    }
+
+    function setStats() {
+      document.getElementById("totalCount").textContent = cards.length;
+      document.getElementById("activeCount").textContent = count("active");
+      document.getElementById("readyCount").textContent = count("ready");
+      document.getElementById("publishedCount").textContent = count("published");
+    }
+
+    function matchCard(card) {
+      if (currentTab !== "all" && card.group !== currentTab) return false;
+      if (!query) return true;
+      const haystack = [
+        card.num, card.name, card.status, card.hook, card.imagePrompt,
+        card.videoPrompt, card.caption, card.videoFile
+      ].join(" ").toLowerCase();
+      return haystack.includes(query.toLowerCase());
+    }
+
+    function pillClass(group) {
+      return `pill ${group}`;
+    }
+
+    function render() {
+      const grid = document.getElementById("grid");
+      const visible = cards.filter(matchCard);
+      if (!visible.length) {
+        grid.innerHTML = `<div class="empty">Здесь сейчас пусто. Добавь новые идеи или переключи раздел.</div>`;
+        return;
+      }
+      grid.innerHTML = visible.map(card => `
+        <article class="card">
+          <div class="cardTop">
+            <div class="meta"><span>Species #${card.num}</span><span>${card.file}</span></div>
+            <h3>${escapeHtml(card.name)}</h3>
+            <p class="hook">${escapeHtml(card.hook || "Без хука")}</p>
+          </div>
+          <div class="body">
+            <span class="${pillClass(card.group)}">${groupText[card.group] || card.status}</span>
+            ${card.videoFile ? `<div class="meta"><span>video</span><span>${escapeHtml(card.videoFile)}</span></div>` : ""}
+            <div class="buttons">
+              <button class="copy" data-copy="${attr(card.imagePrompt)}">Картинка</button>
+              <button class="copy" data-copy="${attr(card.videoPrompt)}">Видео</button>
+              <button class="copy" data-copy="${attr(card.overlay)}">Текст</button>
+              <button class="copy" data-copy="${attr(card.caption)}">Подпись</button>
+            </div>
+            ${card.group === "active" ? `<div class="actions"><button class="readyButton" data-ready="${card.num}">Готово → заменить новой</button></div>` : ""}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[char]));
+    }
+
+    function attr(value) {
+      return escapeHtml(value).replace(/\n/g, "&#10;");
+    }
+
+    async function copy(value) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(value);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = value;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1100);
+    }
+
+    async function markReady(num, button) {
+      button.disabled = true;
+      button.textContent = "Переношу...";
+      try {
+        const response = await fetch("/api/mark-ready", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ num })
+        });
+        if (!response.ok) throw new Error(await response.text());
+        const data = await response.json();
+        cards = data.cards || [];
+        setStats();
+        render();
+        const toast = document.getElementById("toast");
+        toast.textContent = `Готово: #${num}. Добавлена новая карточка.`;
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+          toast.textContent = "Скопировано";
+        }, 1500);
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = "Готово → заменить новой";
+        alert("Эта кнопка работает в локальной Studio через tools/studio_server.py. На публичной GitHub-странице она только для просмотра.");
+      }
+    }
+
+    document.addEventListener("click", event => {
+      const tab = event.target.closest(".tab");
+      if (tab) {
+        currentTab = tab.dataset.tab;
+        document.querySelectorAll(".tab").forEach(item => item.classList.toggle("active", item === tab));
+        render();
+      }
+      const button = event.target.closest(".copy");
+      if (button) copy(button.dataset.copy || "");
+      const readyButton = event.target.closest(".readyButton");
+      if (readyButton) markReady(readyButton.dataset.ready, readyButton);
+    });
+
+    document.getElementById("search").addEventListener("input", event => {
+      query = event.target.value.trim();
+      render();
+    });
+
+    document.getElementById("refresh").addEventListener("click", () => render());
+
+    fetch("data/cards.json")
+      .then(response => response.json())
+      .then(data => {
+        cards = data.cards || [];
+        setStats();
+        render();
+      })
+      .catch(() => {
+        document.getElementById("grid").innerHTML = `<div class="empty">Не удалось загрузить data/cards.json.</div>`;
+      });
+  </script>
+</body>
+</html>
