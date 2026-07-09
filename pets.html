@@ -285,7 +285,7 @@
     }
 
     async function refreshCards() {
-      const response = await fetch(`/data/pets_cards.json?ts=${Date.now()}`, { cache: "no-store" });
+      const response = await fetch(`data/pets_cards.json?ts=${Date.now()}`, { cache: "no-store" });
       if (!response.ok) throw new Error(await response.text());
       const data = await response.json();
       cards = data.cards || [];
