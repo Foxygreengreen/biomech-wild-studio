@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biomech Wild Studio</title>
+  <title>Biomech Pets Studio</title>
   <style>
     :root {
       --bg: #0d0f12;
@@ -234,8 +234,8 @@
       <div class="brand">
         <div class="mark">BW</div>
         <div>
-          <h1>Biomech Wild Studio</h1>
-          <p>контент-фабрика видов</p>
+          <h1>Biomech Pets Studio</h1>
+          <p>домашние животные</p>
         </div>
       </div>
       <div class="stats">
@@ -253,14 +253,13 @@
     </aside>
     <main class="main">
       <section class="hero">
-        <h2>Biomech Wild</h2>
-        <p>Управляй идеями, промптами, подписями и публикациями в одном красивом интерфейсе. Новые карточки не тонут среди готовых.</p>
+        <h2>Biomech Pets</h2>
+        <p>Отдельная серия домашних животных в параллельной вселенной Biomech: только кошки, собаки, шиншиллы и хорьки. Биомеханика встроена в анатомию животного, без неона и световых спецэффектов.</p>
       </section>
       <div class="toolbar">
-        <input id="search" class="search" placeholder="Поиск по виду, хуку, среде, промпту..." />
-        <a class="ghost" href="pets.html" style="text-decoration:none;display:grid;place-items:center;">Домашние животные</a>
-        <a class="ghost" href="test/" style="text-decoration:none;display:grid;place-items:center;">TEST</a>
-        <button id="ensureTen" class="ghost">Добрать до 10</button>
+        <input id="search" class="search" placeholder="Поиск по питомцу, хуку, среде, промпту..." />
+                <a class="ghost" href="test/" style="text-decoration:none;display:grid;place-items:center;">TEST</a>
+        <a class="ghost" href="index.html" style="text-decoration:none;display:grid;place-items:center;">Живые существа</a>
         <button id="refresh" class="ghost">Обновить вид</button>
       </div>
       <section id="grid" class="grid"></section>
@@ -286,7 +285,7 @@
     }
 
     async function refreshCards() {
-      const response = await fetch(`/data/cards.json?ts=${Date.now()}`, { cache: "no-store" });
+      const response = await fetch(`/data/pets_cards.json?ts=${Date.now()}`, { cache: "no-store" });
       if (!response.ok) throw new Error(await response.text());
       const data = await response.json();
       cards = data.cards || [];
@@ -320,7 +319,7 @@
       grid.innerHTML = visible.map(card => `
         <article class="card">
           <div class="cardTop">
-            <div class="meta"><span>Species #${card.num}</span><span>${card.file}</span></div>
+            <div class="meta"><span>Pet #${card.num}</span><span>${card.file}</span></div>
             <h3>${escapeHtml(card.name)}</h3>
             <p class="hook">${escapeHtml(card.hook || "Без хука")}</p>
           </div>
@@ -339,9 +338,6 @@
               <button class="copy" data-copy="${attr(card.overlay)}">Текст</button>
               <button class="copy" data-copy="${attr(card.caption)}">Подпись</button>
             </div>
-            ${card.group === "active" ? `<div class="actions"><button class="readyButton" data-ready="${card.num}">Готово → заменить новой</button></div>` : ""}
-            ${card.group === "ready" ? `<div class="actions"><button class="backButton" data-active="${card.num}">Вернуть в новые</button><button class="publishButton" data-publish="${card.num}">Опубликовано</button></div>` : ""}
-            ${card.group === "published" ? `<div class="actions"><button class="readyButton" data-ready-only="${card.num}">Вернуть в готово</button></div>` : ""}
           </div>
         </article>
       `).join("");
@@ -502,11 +498,10 @@
     });
 
     document.getElementById("refresh").addEventListener("click", () => refreshCards());
-    document.getElementById("ensureTen").addEventListener("click", event => ensureTen(event.target));
 
     refreshCards()
       .catch(() => {
-        document.getElementById("grid").innerHTML = `<div class="empty">Не удалось загрузить data/cards.json.</div>`;
+        document.getElementById("grid").innerHTML = `<div class="empty">Не удалось загрузить data/pets_cards.json.</div>`;
       });
   </script>
 </body>

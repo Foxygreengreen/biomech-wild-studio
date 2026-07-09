@@ -1,0 +1,344 @@
+{
+  "characters": [
+    {
+      "test_id": "TEST-001",
+      "title": "Stingray",
+      "species": "stingray",
+      "status": "NEEDS_SOURCE",
+      "source_card_id": "",
+      "source_prompt_path": "",
+      "test_goal": "Проверить, повторяется ли успех ската как короткого подводного формата.",
+      "keep_rules": [
+        "Короткий формат 8-12 секунд.",
+        "Подводная естественная среда.",
+        "Биомеханика должна быть частью тела, а не внешним костюмом.",
+        "Стабильный single-shot без смены локации."
+      ],
+      "change_rules": [
+        "Менять только одну основную переменную после ручного указания исходника.",
+        "Не менять вид существа до подтверждения гипотезы.",
+        "Не добавлять внезапные события, трансформации или световые эффекты."
+      ],
+      "next_variation_idea": "После ручного сопоставления двух успешных Stingray-роликов выбрать один общий признак и изменить только движение камеры или микро-действие.",
+      "linked_cards": [],
+      "notes": "Нужны точные исходные карточки или prompt двух успешных Stingray-роликов.",
+      "source_ready": false,
+      "prompts": [
+        {
+          "id": "STINGRAY-01",
+          "title": "Sand Lift",
+          "change": "micro-action",
+          "image_prompt": "Glide Ray, a photorealistic biomechanical stingray in sandy lagoon floor, front wing edge lifting a thin layer of sand, low underwater angle. Organic anatomy fused with flexible wing membrane ribs, sand-pressure sensors, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife shot, 8-12 seconds. Glide Ray, a photorealistic biomechanical stingray on a sandy lagoon floor. Organic anatomy fused with exposed precision mechanics, flexible wing membrane ribs and sand-pressure sensors. IMAGE-TO-VIDEO REFERENCE LOCK: use the uploaded image as the exact design source. Preserve the same stingray identity, silhouette, visible biomechanical parts, colors, body surface, and sandy lagoon environment from first frame to last frame. Controlled action beat: 0-2s the ray is settled low in the sand; 2-6s the front wing edge lifts and pushes a visible soft wave of sand outward; 6-10s the body makes one slow natural glide forward while the wing membrane ribs flex in a readable wave, then settles. The motion should be calm but clearly alive, with sand particles reacting naturally. Camera: locked low wildlife-documentary camera, very slow controlled push-in, stable framing, no shake, no cut, no scene change. Neutral natural underwater illumination, tactile metal-and-skin texture, realistic sand contact. No glow, no light beams, no holograms, no sudden attack, no extra creatures, no transformation, no growing or shedding body covering, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Sand Lift — biomechanical stingray from Biomech Wild.\n\nA quiet underwater scene from the biomech wild universe, where marine life evolved with visible precision mechanics inside its natural anatomy. This test explores micro-action while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical stingray, AI wildlife, underwater creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #stingray #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STINGRAY-02",
+          "title": "Camera Approach",
+          "change": "direction of movement",
+          "image_prompt": "Glide Ray, a photorealistic biomechanical stingray in sandy lagoon floor, slow frontal glide toward camera, sandy lagoon floor, readable silhouette. Organic anatomy fused with flexible wing membrane ribs, sand-pressure sensors, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife shot, 8-12 seconds. Glide Ray, a photorealistic biomechanical stingray on a sandy lagoon floor. Organic anatomy fused with exposed precision mechanics, flexible wing membrane ribs and sand-pressure sensors. Preserve the uploaded reference image exactly: same creature, same visible mechanics, same body coverage, same colors, same natural lagoon floor. Controlled action beat: the stingray starts nearly still, then makes one smooth forward glide toward the camera, with two slow wing undulations and tiny servo corrections in the visible membrane ribs. A thin trail of sand moves under the body and settles behind it. Keep the action calm, precise, and documentary, but unmistakably moving. Camera: locked frontal low angle or very gentle backward drift, stable framing, no sudden reframing, no fast zoom, no scene change. Neutral natural underwater light, realistic sand particles, tactile biomechanical texture. No new event, no second creature, no transformation, no reveal of hidden layers, no body parts appearing or vanishing.",
+          "instagram_caption": "Camera Approach — biomechanical stingray from Biomech Wild.\n\nA quiet underwater scene from the biomech wild universe, where marine life evolved with visible precision mechanics inside its natural anatomy. This test explores direction of movement while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical stingray, AI wildlife, underwater creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #stingray #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STINGRAY-03",
+          "title": "Sensor Pause",
+          "change": "behavior beat",
+          "image_prompt": "Glide Ray, a photorealistic biomechanical stingray in sandy lagoon floor, still sensing pose, visible sand-pressure sensors, calm underwater frame. Organic anatomy fused with flexible wing membrane ribs, sand-pressure sensors, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife shot, 8-12 seconds. Glide Ray, a photorealistic biomechanical stingray in a sandy lagoon floor environment. Organic anatomy fused with exposed precision mechanics, flexible wing membrane ribs and sand-pressure sensors. IMAGE-TO-VIDEO REFERENCE LOCK: preserve the same animal identity, silhouette, mechanics, body surface, colors, and habitat. Controlled action beat: 0-2s the ray pauses and senses the sand; 2-5s the visible sand-pressure sensors make a synchronized micro-adjustment; 5-9s the ray pivots a few degrees and makes one short side-glide, stirring a small crescent of sand. The moment should feel like a real animal reacting to the sea floor, not like a machine demo. Camera: locked wildlife macro-medium shot, shallow depth of field, stable frame. Neutral natural illumination only, accurate contact shadows, tactile metal and organic surface. No glow, no flashing, no extra creatures, no sudden event, no morphing, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Sensor Pause — biomechanical stingray from Biomech Wild.\n\nA quiet underwater scene from the biomech wild universe, where marine life evolved with visible precision mechanics inside its natural anatomy. This test explores behavior beat while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical stingray, AI wildlife, underwater creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #stingray #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STINGRAY-04",
+          "title": "Wing Detail",
+          "change": "shot size",
+          "image_prompt": "Glide Ray, a photorealistic biomechanical stingray in sandy lagoon floor, macro detail of wing membrane ribs, tactile sand contact. Organic anatomy fused with flexible wing membrane ribs, sand-pressure sensors, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife macro shot, 8-12 seconds. Glide Ray, a photorealistic biomechanical stingray resting on a sandy lagoon floor. Organic anatomy fused with exposed precision mechanics, flexible wing membrane ribs and sand-pressure sensors. Use the reference image as exact design source. Preserve the same visible biomechanical layout and natural body surface. Controlled action beat: camera stays close on one wing edge as the membrane performs a slow ripple from front to back; the already-visible rib mechanisms flex in sequence and push a fine line of sand aside. The motion is subtle but clearly progressive across the wing. Camera: locked macro wildlife camera with a very slow focus pull along the wing edge, no cut, no shake, no scene change. Neutral underwater illumination, real sand texture, tactile metal-and-skin detail. Avoid transformation, hidden mechanism reveal, glow, light effects, extra creatures, attack, chase, or changing the anatomy.",
+          "instagram_caption": "Wing Detail — biomechanical stingray from Biomech Wild.\n\nA quiet underwater scene from the biomech wild universe, where marine life evolved with visible precision mechanics inside its natural anatomy. This test explores shot size while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical stingray, AI wildlife, underwater creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #stingray #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STINGRAY-05",
+          "title": "Stillness Hook",
+          "change": "rhythm",
+          "image_prompt": "Glide Ray, a photorealistic biomechanical stingray in sandy lagoon floor, almost hidden in sand, eye-line shift, quiet camouflage-like stillness. Organic anatomy fused with flexible wing membrane ribs, sand-pressure sensors, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife observation, 8-12 seconds. Glide Ray, a photorealistic biomechanical stingray on a sandy lagoon floor. Organic anatomy fused with exposed precision mechanics, flexible wing membrane ribs and sand-pressure sensors. Reference lock: same creature, same silhouette, same visible mechanics, same body covering, same natural environment. Controlled action beat: first the ray is almost hidden in the sand; then it raises its body edge, releases a soft cloud of sand, glides half a body length forward, and settles again. Keep the movement minimal, smooth, and believable, with visible environmental reaction. Camera: locked low documentary frame, no cuts, no zoom jumps, no location change. Neutral natural underwater light, shallow depth of field, realistic sand contact. No extra creatures, no sudden attack, no transformation, no growing or shedding, no mechanisms appearing or disappearing, no sci-fi light effects.",
+          "instagram_caption": "Stillness Hook — biomechanical stingray from Biomech Wild.\n\nA quiet underwater scene from the biomech wild universe, where marine life evolved with visible precision mechanics inside its natural anatomy. This test explores rhythm while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical stingray, AI wildlife, underwater creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #stingray #aiwildlife #aivideo #digitalnature"
+        }
+      ]
+    },
+    {
+      "test_id": "TEST-002",
+      "title": "Starfish",
+      "species": "starfish",
+      "status": "READY_FOR_VARIATION",
+      "source_card_id": "055",
+      "source_prompt_path": "cards_ready/055_starfish.md",
+      "test_goal": "Проверить, повторяется ли высокий охват морской звезды.",
+      "keep_rules": [
+        "Сохранять Orbit Starfish как starfish.",
+        "Сохранять tidal pool как среду.",
+        "Сохранять magnetic tube feet и modular limb repair nodes.",
+        "Сохранять спокойное National Geographic micro-motion наблюдение."
+      ],
+      "change_rules": [
+        "Менять только одну переменную: микро-действие, крупность, угол или движение камеры.",
+        "Не добавлять второе существо, если это не отдельный NatGeo-test.",
+        "Не добавлять трансформации, glow, light beams или появление новых механизмов."
+      ],
+      "next_variation_idea": "Сделать контрольный тест с тем же tidal pool и той же биомеханикой, но изменить только крупность: более близкий macro-shot на tube feet.",
+      "linked_cards": [
+        "cards_ready/055_starfish.md"
+      ],
+      "notes": "Источник найден. Можно готовить вариацию только после подтверждения пользователя.",
+      "source_ready": true,
+      "prompts": [
+        {
+          "id": "STARFISH-01",
+          "title": "Tube Feet Macro",
+          "change": "shot size",
+          "image_prompt": "Orbit Starfish, a photorealistic biomechanical starfish in tidal pool, macro view of magnetic tube feet on wet rock. Organic anatomy fused with magnetic tube feet, modular limb repair nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife macro shot, 8-12 seconds. Orbit Starfish, a photorealistic biomechanical starfish in a tidal pool. Organic anatomy fused with exposed precision mechanics, magnetic tube feet and modular limb repair nodes. IMAGE-TO-VIDEO REFERENCE LOCK: preserve the uploaded image exactly, same starfish identity, same five-arm silhouette, same visible mechanics, same body surface, same tidal pool. Controlled action beat: 0-2s hold on the tube feet; 2-6s the tube feet grip and release wet rock in a visible wave; 6-10s one arm edge pulls forward a few millimeters and the whole body subtly follows. The movement is small but readable and organic. Camera: locked macro wildlife camera with a very slow controlled push-in. Neutral natural tide-pool illumination, tactile wet surface, realistic reflections. No glow, no light beams, no extra creature, no sudden event, no transformation, no new mechanisms, no body parts appearing or disappearing.",
+          "instagram_caption": "Tube Feet Macro — biomechanical starfish from Biomech Wild.\n\nA tide pool creature from the biomech wild universe, built from organic texture, magnetic tube feet, and subtle mechanical intelligence. This test explores shot size while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical starfish, AI wildlife, tide pool creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #starfish #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STARFISH-02",
+          "title": "Five-Arm Breath",
+          "change": "micro-action",
+          "image_prompt": "Orbit Starfish, a photorealistic biomechanical starfish in tidal pool, five-arm symmetrical pose with subtle mechanical settling. Organic anatomy fused with magnetic tube feet, modular limb repair nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife shot, 8-12 seconds. Orbit Starfish, a photorealistic biomechanical starfish in a tidal pool, organic anatomy fused with exposed precision mechanics, magnetic tube feet and modular limb repair nodes. Reference lock: keep the exact creature design, five-arm silhouette, visible mechanics, colors, and tidal pool environment. Controlled action beat: the starfish begins still; then all five arms make a slow coordinated tightening motion; one arm reaches forward slightly while the tube feet pull the body a small distance across the wet rock. Camera: overhead or slightly angled documentary shot, stable and calm, no cuts, no scene change. Neutral natural illumination only, shallow depth of field, tactile organic-metal texture. No attack, no chase, no second creature, no transformation, no hidden reveal, no mechanisms appearing or vanishing.",
+          "instagram_caption": "Five-Arm Breath — biomechanical starfish from Biomech Wild.\n\nA tide pool creature from the biomech wild universe, built from organic texture, magnetic tube feet, and subtle mechanical intelligence. This test explores micro-action while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical starfish, AI wildlife, tide pool creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #starfish #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STARFISH-03",
+          "title": "Edge Turn",
+          "change": "angle",
+          "image_prompt": "Orbit Starfish, a photorealistic biomechanical starfish in tidal pool, low side angle on one arm edge, wet rock texture. Organic anatomy fused with magnetic tube feet, modular limb repair nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic tide-pool wildlife shot, 8-12 seconds. Orbit Starfish, a photorealistic biomechanical starfish in a tidal pool. Organic anatomy fused with exposed precision mechanics, magnetic tube feet and modular limb repair nodes. Preserve the uploaded reference exactly: same identity, silhouette, visible mechanics, body coverage, colors, and environment. Controlled action beat: from a low side angle, one arm edge slowly lifts, folds slightly toward the camera, then presses back into the wet rock as the tube feet pull once. Show tactile biomechanical detail without changing anatomy. Camera: low side angle near wet rock, locked tripod or very slow push-in, stable framing. Natural tide-pool light, realistic water shimmer, no artificial light effects. No transformation, no sudden event, no extra creature, no new parts, no body covering changes.",
+          "instagram_caption": "Edge Turn — biomechanical starfish from Biomech Wild.\n\nA tide pool creature from the biomech wild universe, built from organic texture, magnetic tube feet, and subtle mechanical intelligence. This test explores angle while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical starfish, AI wildlife, tide pool creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #starfish #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STARFISH-04",
+          "title": "Waterline Pause",
+          "change": "environment detail",
+          "image_prompt": "Orbit Starfish, a photorealistic biomechanical starfish in tidal pool, gentle waterline ripple over visible biomechanical body. Organic anatomy fused with magnetic tube feet, modular limb repair nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife observation, 8-12 seconds. Orbit Starfish, a photorealistic biomechanical starfish in a tidal pool, organic anatomy fused with exposed precision mechanics, magnetic tube feet and modular limb repair nodes. IMAGE-TO-VIDEO REFERENCE LOCK: same starfish, same mechanics, same five-arm silhouette, same tidal pool. Controlled action beat: a gentle natural water ripple passes over the body; as it clears, the starfish makes one visible crawling pulse, with tube feet gripping, arm edges tightening, and the body shifting a few millimeters. Camera: locked close documentary shot, no reframing, no cut, no scene change. Neutral natural light, wet rock texture, realistic shadows. No glow, no holograms, no extra creatures, no attack, no transformation, no appearing or disappearing mechanisms.",
+          "instagram_caption": "Waterline Pause — biomechanical starfish from Biomech Wild.\n\nA tide pool creature from the biomech wild universe, built from organic texture, magnetic tube feet, and subtle mechanical intelligence. This test explores environment detail while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical starfish, AI wildlife, tide pool creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #starfish #aiwildlife #aivideo #digitalnature"
+        },
+        {
+          "id": "STARFISH-05",
+          "title": "Center Focus",
+          "change": "focus point",
+          "image_prompt": "Orbit Starfish, a photorealistic biomechanical starfish in tidal pool, center-focused macro portrait of modular repair nodes. Organic anatomy fused with magnetic tube feet, modular limb repair nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic macro wildlife shot, 8-12 seconds. Orbit Starfish, a photorealistic biomechanical starfish in a tidal pool. Organic anatomy fused with exposed precision mechanics, magnetic tube feet and modular limb repair nodes. Use the uploaded image as exact design source. Preserve identity, five-arm silhouette, colors, body surface, and natural tidal pool. Controlled action beat: camera holds on the center of the starfish; the modular repair nodes make a small visible calibration sequence, then the five arms respond with a gentle outward flex and settle. The movement should be compact but clearly staged. Camera: locked macro shot with slight focus pull, no cuts, no shake, no scene change. Neutral natural illumination, tactile metal-organic detail. No hidden mechanism reveal, no transformation, no extra creature, no light effects.",
+          "instagram_caption": "Center Focus — biomechanical starfish from Biomech Wild.\n\nA tide pool creature from the biomech wild universe, built from organic texture, magnetic tube feet, and subtle mechanical intelligence. This test explores focus point while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical starfish, AI wildlife, tide pool creature design, sci-fi nature documentary, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #starfish #aiwildlife #aivideo #digitalnature"
+        }
+      ]
+    },
+    {
+      "test_id": "TEST-003",
+      "title": "Dog",
+      "species": "dog",
+      "status": "NEEDS_SOURCE",
+      "source_card_id": "",
+      "source_prompt_path": "",
+      "test_goal": "Проверить emotional biomechanical animal через знакомое домашнее животное.",
+      "keep_rules": [
+        "Сохранять домашнее животное как warm, alive, cute, domestic.",
+        "Биомеханика встроена в анатомию, видима через parted fur.",
+        "Не превращать животное в horror, skeleton или external armor suit.",
+        "Стабильная домашняя локация без смены сцены."
+      ],
+      "change_rules": [
+        "Сначала вручную выбрать успешную dog-карточку.",
+        "После выбора менять только одну переменную: породу, позу, микро-действие, камеру или небольшой элемент комнаты.",
+        "Не допускать роста шерсти, исчезновения механизмов или изменения покрытия тела."
+      ],
+      "next_variation_idea": "После выбора успешной dog-карточки сделать одну вариацию с тем же животным и той же комнатой, поменяв только микро-действие.",
+      "linked_cards": [
+        "cards_pets/004_dog_corgi.md",
+        "cards_pets/005_dog_shepherd.md",
+        "cards_pets/006_dog_poodle.md"
+      ],
+      "notes": "Нужно вручную указать, какая dog-карточка соответствует успешному ролику.",
+      "source_ready": false,
+      "prompts": [
+        {
+          "id": "DOG-01",
+          "title": "Eye Contact",
+          "change": "micro-action",
+          "image_prompt": "a warm photorealistic biomechanical dog in calm domestic room, emotional eye contact, warm domestic room, visible facial and shoulder mechanics. Organic anatomy fused with visible paw joints, soft servo shoulder bundles, cable tendons, micro-pistons, sensor whiskers, fur parted around mechanical seams. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic domestic wildlife shot, 8-12 seconds. A warm photorealistic biomechanical dog in a calm home environment. Biomechanics is part of its natural living structure: visible paw joints, soft servo shoulder bundles, cable tendons, tiny pistons, sensor whiskers, and fur parted around elegant mechanical seams. IMAGE-TO-VIDEO REFERENCE LOCK: preserve the uploaded image exactly, same dog identity, same visible mechanics, same fur coverage, same room, same colors. The dog makes one small emotional action: it raises its eyes to the camera and breathes softly while the already-visible paw and shoulder mechanisms make tiny natural adjustments. Camera: locked eye-level documentary shot, no cut, no fast zoom, no scene change. Neutral domestic illumination only. No glow, no external armor, no skeletal horror, no fur growth, no fur shedding, no disappearing mechanisms, no transformation.",
+          "instagram_caption": "Eye Contact — biomechanical dog from Biomech Wild.\n\nA familiar domestic animal reimagined as a warm living machine, with visible paw mechanics, sensor whiskers, and soft synthetic-organic fur. This test explores micro-action while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical dog, AI pet video, emotional creature design, sci-fi domestic animal, digital pet art.\n\nWhich version should evolve next?\n\n#biomechanical #dog #aipets #aivideo #digitalpet"
+        },
+        {
+          "id": "DOG-02",
+          "title": "Paw Shift",
+          "change": "body movement",
+          "image_prompt": "a warm photorealistic biomechanical dog in calm domestic room, low paw-detail view, tiny pistons and paw joints visible. Organic anatomy fused with visible paw joints, soft servo shoulder bundles, cable tendons, micro-pistons, sensor whiskers, fur parted around mechanical seams. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic domestic animal shot, 8-12 seconds. A photorealistic biomechanical dog in the same home environment as the reference image. Organic anatomy fused with visible precision mechanics: paw assemblies, shoulder panels, cable tendons, micro-pistons, sensor whiskers, tactile synthetic-organic fur. Reference lock: same dog, same fur coverage, same visible mechanisms, same room and props. The only action is a small natural paw shift; the tiny paw pistons compress and release once, then the dog settles. Camera: locked low angle near the paws or very gentle push-in, stable framing, no scene change. Neutral domestic light, tactile material detail. No costume, no armor suit, no glow, no transformation, no fur covering the mechanics, no mechanisms appearing or vanishing.",
+          "instagram_caption": "Paw Shift — biomechanical dog from Biomech Wild.\n\nA familiar domestic animal reimagined as a warm living machine, with visible paw mechanics, sensor whiskers, and soft synthetic-organic fur. This test explores body movement while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical dog, AI pet video, emotional creature design, sci-fi domestic animal, digital pet art.\n\nWhich version should evolve next?\n\n#biomechanical #dog #aipets #aivideo #digitalpet"
+        },
+        {
+          "id": "DOG-03",
+          "title": "Ear Servo",
+          "change": "focus detail",
+          "image_prompt": "a warm photorealistic biomechanical dog in calm domestic room, close portrait with ear actuator and sensor whiskers visible. Organic anatomy fused with visible paw joints, soft servo shoulder bundles, cable tendons, micro-pistons, sensor whiskers, fur parted around mechanical seams. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic close wildlife shot, 8-12 seconds. A warm expressive photorealistic biomechanical dog in a domestic room. Biomechanics is naturally integrated into the body, with visible ear actuators, shoulder mechanics, paw joints, sensor whiskers, parted fur seams, and tactile metal-fiber textures. IMAGE-TO-VIDEO REFERENCE LOCK: keep the exact reference design, same fur amount, same visible mechanisms, same room, same color palette. The dog hears something quiet off-camera and makes one tiny ear movement; the visible ear actuator responds subtly without changing shape. Camera: locked close shot, shallow depth of field, no cuts, no shake, no scene change. Neutral room illumination only. No glow, no light beams, no sudden event, no horror, no transformation, no fur growing or shedding, no hidden mechanisms appearing.",
+          "instagram_caption": "Ear Servo — biomechanical dog from Biomech Wild.\n\nA familiar domestic animal reimagined as a warm living machine, with visible paw mechanics, sensor whiskers, and soft synthetic-organic fur. This test explores focus detail while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical dog, AI pet video, emotional creature design, sci-fi domestic animal, digital pet art.\n\nWhich version should evolve next?\n\n#biomechanical #dog #aipets #aivideo #digitalpet"
+        },
+        {
+          "id": "DOG-04",
+          "title": "Tail Balance",
+          "change": "movement emphasis",
+          "image_prompt": "a warm photorealistic biomechanical dog in calm domestic room, medium shot showing tail balance mechanism and shoulder panels. Organic anatomy fused with visible paw joints, soft servo shoulder bundles, cable tendons, micro-pistons, sensor whiskers, fur parted around mechanical seams. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic domestic wildlife observation, 8-12 seconds. A photorealistic biomechanical dog in a stable home environment. Organic anatomy fused with visible precision mechanics, tail balance mechanism, paw joints, soft servo muscles, cable tendons, and fur parted around mechanical seams. Preserve the uploaded image exactly: same dog identity, same visible biomechanical design, same fur coverage, same room. The dog makes a small weight shift; the tail actuator balances once with a subtle natural motion. Camera: locked medium shot, very slow controlled push-in, no cut, no fast zoom, no location change. Neutral domestic illumination, realistic shadows, tactile fur and metal texture. No glow, no armor costume, no transformation, no fur growth, no parts disappearing.",
+          "instagram_caption": "Tail Balance — biomechanical dog from Biomech Wild.\n\nA familiar domestic animal reimagined as a warm living machine, with visible paw mechanics, sensor whiskers, and soft synthetic-organic fur. This test explores movement emphasis while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical dog, AI pet video, emotional creature design, sci-fi domestic animal, digital pet art.\n\nWhich version should evolve next?\n\n#biomechanical #dog #aipets #aivideo #digitalpet"
+        },
+        {
+          "id": "DOG-05",
+          "title": "Quiet Sit",
+          "change": "rhythm",
+          "image_prompt": "a warm photorealistic biomechanical dog in calm domestic room, quiet sitting portrait, cute domestic expression, visible biomechanical seams. Organic anatomy fused with visible paw joints, soft servo shoulder bundles, cable tendons, micro-pistons, sensor whiskers, fur parted around mechanical seams. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic animal portrait, 8-12 seconds. A warm cute photorealistic biomechanical dog sitting in a calm domestic room. The biomechanics are integrated into its living anatomy: visible paw mechanisms, shoulder panels, cable tendons, micro-hydraulic joints, sensor whiskers, tactile synthetic-organic fur. IMAGE-TO-VIDEO REFERENCE LOCK: same animal identity, same body proportions, same fur coverage, same visible mechanisms, same room and props. The dog remains mostly still, breathing softly; tiny mechanical details move only where already visible. Camera: locked portrait frame at dog eye height, no cuts, no scene change. Neutral domestic illumination only, shallow depth of field. No light effects, no horror, no external armor, no transformation, no fur changes, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Quiet Sit — biomechanical dog from Biomech Wild.\n\nA familiar domestic animal reimagined as a warm living machine, with visible paw mechanics, sensor whiskers, and soft synthetic-organic fur. This test explores rhythm while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical dog, AI pet video, emotional creature design, sci-fi domestic animal, digital pet art.\n\nWhich version should evolve next?\n\n#biomechanical #dog #aipets #aivideo #digitalpet"
+        }
+      ]
+    },
+    {
+      "test_id": "TEST-004",
+      "title": "Nautilus",
+      "species": "nautilus",
+      "status": "READY_FOR_VARIATION",
+      "source_card_id": "054",
+      "source_prompt_path": "cards_ready/054_nautilus.md",
+      "test_goal": "Проверить древний механический морской организм как повторяемый формат.",
+      "keep_rules": [
+        "Сохранять Clockwork Nautilus как nautilus.",
+        "Сохранять blue twilight reef.",
+        "Сохранять spiral pressure chamber и gyroscopic shell engine.",
+        "Сохранять плавное короткое подводное наблюдение."
+      ],
+      "change_rules": [
+        "Менять только одну переменную: угол, крупность, direction of movement или очень медленный push-in.",
+        "Не менять core shell geometry.",
+        "Не добавлять glow, holograms, hidden mechanism reveal или смену локации."
+      ],
+      "next_variation_idea": "Сделать контрольный тест с тем же reef и shell engine, но изменить только движение: медленный поворот раковины к камере.",
+      "linked_cards": [
+        "cards_ready/054_nautilus.md"
+      ],
+      "notes": "Источник найден. Можно готовить вариацию только после подтверждения пользователя.",
+      "source_ready": true,
+      "prompts": [
+        {
+          "id": "NAUTILUS-01",
+          "title": "Shell Turn",
+          "change": "direction of movement",
+          "image_prompt": "Clockwork Nautilus, a photorealistic biomechanical nautilus in blue twilight reef, slow shell turn pose, spiral shell silhouette readable. Organic anatomy fused with spiral pressure chamber, gyroscopic shell engine, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic underwater wildlife shot, 8-12 seconds. Clockwork Nautilus, a photorealistic biomechanical nautilus in a blue twilight reef. Organic anatomy fused with exposed precision mechanics, spiral pressure chamber and gyroscopic shell engine. IMAGE-TO-VIDEO REFERENCE LOCK: preserve the uploaded image exactly, same nautilus identity, spiral shell silhouette, visible mechanics, colors, and reef environment. The nautilus makes one slow natural shell turn toward the camera while the already-visible gyroscopic shell engine makes tiny servo corrections. Camera: locked medium underwater documentary shot or very slow push-in, stable framing, no cuts, no scene change. Neutral natural underwater light, tactile shell and metal texture. No glow, no hidden reveal, no extra creature, no transformation, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Shell Turn — biomechanical nautilus from Biomech Wild.\n\nAn ancient marine organism reimagined with a spiral pressure chamber and gyroscopic shell engine, moving through a blue twilight reef. This test explores direction of movement while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical nautilus, AI wildlife, underwater creature design, sci-fi marine organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #nautilus #aiwildlife #aivideo #underwaterworld"
+        },
+        {
+          "id": "NAUTILUS-02",
+          "title": "Spiral Macro",
+          "change": "shot size",
+          "image_prompt": "Clockwork Nautilus, a photorealistic biomechanical nautilus in blue twilight reef, macro spiral shell detail, pressure chamber visible. Organic anatomy fused with spiral pressure chamber, gyroscopic shell engine, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic macro underwater shot, 8-12 seconds. Clockwork Nautilus, a photorealistic biomechanical nautilus in a blue twilight reef, organic anatomy fused with exposed precision mechanics, spiral pressure chamber and gyroscopic shell engine. Reference lock: same creature, same shell geometry, same visible mechanisms, same reef, same colors. Camera stays close on the spiral shell while the pressure chamber makes a subtle internal settling motion visible only in already-present mechanical details. Camera: locked macro shot with a very slow focus pull, no cut, no shake, no location change. Natural underwater illumination, realistic shadows, tactile shell-metal surface. No glow, no new parts, no transformation, no extra creature, no sudden event.",
+          "instagram_caption": "Spiral Macro — biomechanical nautilus from Biomech Wild.\n\nAn ancient marine organism reimagined with a spiral pressure chamber and gyroscopic shell engine, moving through a blue twilight reef. This test explores shot size while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical nautilus, AI wildlife, underwater creature design, sci-fi marine organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #nautilus #aiwildlife #aivideo #underwaterworld"
+        },
+        {
+          "id": "NAUTILUS-03",
+          "title": "Hover Pause",
+          "change": "rhythm",
+          "image_prompt": "Clockwork Nautilus, a photorealistic biomechanical nautilus in blue twilight reef, hovering stillness in blue reef, gyroscopic shell engine visible. Organic anatomy fused with spiral pressure chamber, gyroscopic shell engine, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife observation, 8-12 seconds. Clockwork Nautilus, a photorealistic biomechanical nautilus hovering in a blue twilight reef. Organic anatomy fused with exposed precision mechanics, spiral pressure chamber and gyroscopic shell engine. IMAGE-TO-VIDEO REFERENCE LOCK: same identity, same silhouette, same visible mechanics, same colors, same reef environment. The nautilus hovers almost still; only soft buoyancy movement and tiny gyroscopic corrections show that it is alive. Camera: locked underwater wildlife frame, no cuts, no zoom jumps, no scene change. Neutral natural underwater illumination, shallow depth of field, tactile shell and metal detail. No glow, no holograms, no transformation, no hidden mechanism reveal, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Hover Pause — biomechanical nautilus from Biomech Wild.\n\nAn ancient marine organism reimagined with a spiral pressure chamber and gyroscopic shell engine, moving through a blue twilight reef. This test explores rhythm while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical nautilus, AI wildlife, underwater creature design, sci-fi marine organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #nautilus #aiwildlife #aivideo #underwaterworld"
+        },
+        {
+          "id": "NAUTILUS-04",
+          "title": "Tentacle Micro-Move",
+          "change": "micro-action",
+          "image_prompt": "Clockwork Nautilus, a photorealistic biomechanical nautilus in blue twilight reef, side angle with small tentacle adjustment and stable shell engine. Organic anatomy fused with spiral pressure chamber, gyroscopic shell engine, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic underwater wildlife shot, 8-12 seconds. Clockwork Nautilus, a photorealistic biomechanical nautilus in a blue twilight reef. Organic anatomy fused with exposed precision mechanics, spiral pressure chamber and gyroscopic shell engine. Preserve the reference image exactly: same nautilus, same shell, same visible mechanics, same reef. The only action is a small natural tentacle adjustment while the shell engine remains stable and visible. Camera: low side documentary angle, locked or very gentle tracking, no cut, no scene change. Natural underwater illumination, realistic water motion, tactile biomechanical detail. No extra creature, no chase, no attack, no transformation, no glow, no appearing or disappearing parts.",
+          "instagram_caption": "Tentacle Micro-Move — biomechanical nautilus from Biomech Wild.\n\nAn ancient marine organism reimagined with a spiral pressure chamber and gyroscopic shell engine, moving through a blue twilight reef. This test explores micro-action while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical nautilus, AI wildlife, underwater creature design, sci-fi marine organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #nautilus #aiwildlife #aivideo #underwaterworld"
+        },
+        {
+          "id": "NAUTILUS-05",
+          "title": "Reef Drift",
+          "change": "camera movement",
+          "image_prompt": "Clockwork Nautilus, a photorealistic biomechanical nautilus in blue twilight reef, side drift composition revealing tactile shell texture. Organic anatomy fused with spiral pressure chamber, gyroscopic shell engine, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic underwater shot, 8-12 seconds. Clockwork Nautilus, a photorealistic biomechanical nautilus in a blue twilight reef, organic anatomy fused with exposed precision mechanics, spiral pressure chamber and gyroscopic shell engine. IMAGE-TO-VIDEO REFERENCE LOCK: keep the same creature identity, shell silhouette, visible biomechanical design, colors, and reef environment. The nautilus remains calm while the camera makes a very slow controlled side drift, revealing the spiral shell texture without changing the creature. Camera: smooth documentary side drift only, no fast zoom, no shake, no cuts, no scene change. Neutral underwater light, tactile surface detail. No glow, no light beams, no hidden reveal, no transformation, no new mechanisms.",
+          "instagram_caption": "Reef Drift — biomechanical nautilus from Biomech Wild.\n\nAn ancient marine organism reimagined with a spiral pressure chamber and gyroscopic shell engine, moving through a blue twilight reef. This test explores camera movement while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical nautilus, AI wildlife, underwater creature design, sci-fi marine organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #nautilus #aiwildlife #aivideo #underwaterworld"
+        }
+      ]
+    },
+    {
+      "test_id": "TEST-005",
+      "title": "Mushroom / Fungus",
+      "species": "fungus",
+      "status": "READY_FOR_VARIATION",
+      "source_card_id": "049",
+      "source_prompt_path": "cards_published/049_fungus.md",
+      "test_goal": "Проверить biomechanical flora / fungus как отдельную тестовую линию.",
+      "keep_rules": [
+        "Сохранять Root Mycelium / biomechanical fungus.",
+        "Сохранять old growth forest floor.",
+        "Сохранять pressure-sensitive root network и metallic spore nodes.",
+        "Сохранять спокойное micro-motion без внезапных событий."
+      ],
+      "change_rules": [
+        "Менять только одну переменную: степень микро-пульсации, крупность, угол камеры или фокус на spore nodes.",
+        "Не добавлять животных, если это не отдельный NatGeo-test.",
+        "Не делать рост, раскрытие скрытых слоёв, трансформацию или световые эффекты."
+      ],
+      "next_variation_idea": "Сделать контрольный тест с тем же forest floor и root network, но изменить только фокус: macro close-up на metallic spore nodes.",
+      "linked_cards": [
+        "cards_published/049_fungus.md"
+      ],
+      "notes": "Источник найден в published. Готов к вариации после подтверждения пользователя.",
+      "source_ready": true,
+      "prompts": [
+        {
+          "id": "FUNGUS-01",
+          "title": "Spore Nodes Macro",
+          "change": "shot size",
+          "image_prompt": "Root Mycelium, a photorealistic biomechanical fungus in old growth forest floor, macro metallic spore nodes on moss and bark. Organic anatomy fused with pressure-sensitive root network, metallic spore nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic macro wildlife shot, 8-12 seconds. Root Mycelium, a photorealistic biomechanical fungus on an old growth forest floor. Organic anatomy fused with exposed precision mechanics, pressure-sensitive root network and metallic spore nodes. IMAGE-TO-VIDEO REFERENCE LOCK: preserve the uploaded image exactly, same fungus identity, visible mechanics, colors, body surface, and forest floor environment. Controlled action beat: 0-2s hold on the spore nodes; 2-6s the metallic nodes pulse in a visible ripple from left to right; 6-10s a tiny pressure wave travels through the already-visible root network and moves nearby moss fibers slightly. Camera: locked macro shot with slight focus pull, no cut, no scene change. Neutral natural forest illumination, tactile wet bark, moss, metal, and organic texture. No glow, no light beams, no animals, no sudden event, no growth, no peeling, no transformation, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Spore Nodes Macro — biomechanical fungus from Biomech Wild.\n\nA forest-floor organism from the biomech wild universe, where mycelium, metallic spore nodes, and pressure-sensitive roots behave like living technology. This test explores shot size while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical fungus, AI wildlife, mycelium creature design, sci-fi forest organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #fungus #mycelium #aiwildlife #aivideo"
+        },
+        {
+          "id": "FUNGUS-02",
+          "title": "Root Pulse",
+          "change": "micro-action",
+          "image_prompt": "Root Mycelium, a photorealistic biomechanical fungus in old growth forest floor, visible root network with one subtle pressure pulse. Organic anatomy fused with pressure-sensitive root network, metallic spore nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic forest-floor observation, 8-12 seconds. Root Mycelium, a photorealistic biomechanical fungus in old growth forest floor. Organic anatomy fused with exposed precision mechanics, pressure-sensitive root network and metallic spore nodes. Reference lock: same fungus, same visible mechanical layout, same natural forest floor, same colors and textures. Controlled action beat: the visible root network performs one slow pressure pulse that travels outward; spore nodes respond in sequence; tiny moss and soil particles shift naturally around the already-visible roots. No new roots grow and no hidden structures appear. Camera: locked low documentary frame, stable, no cut, no scene change. Neutral natural forest light, realistic shadows, tactile metal-organic texture. No glow, no magical effects, no sudden event, no animals, no transformation, no growth, no peeling, no appearing or disappearing mechanisms.",
+          "instagram_caption": "Root Pulse — biomechanical fungus from Biomech Wild.\n\nA forest-floor organism from the biomech wild universe, where mycelium, metallic spore nodes, and pressure-sensitive roots behave like living technology. This test explores micro-action while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical fungus, AI wildlife, mycelium creature design, sci-fi forest organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #fungus #mycelium #aiwildlife #aivideo"
+        },
+        {
+          "id": "FUNGUS-03",
+          "title": "Forest Floor Stillness",
+          "change": "rhythm",
+          "image_prompt": "Root Mycelium, a photorealistic biomechanical fungus in old growth forest floor, almost still forest-floor organism, condensation and spore nodes. Organic anatomy fused with pressure-sensitive root network, metallic spore nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic wildlife shot, 8-12 seconds. Root Mycelium, a photorealistic biomechanical fungus on an old growth forest floor. Organic anatomy fused with exposed precision mechanics, pressure-sensitive root network and metallic spore nodes. IMAGE-TO-VIDEO REFERENCE LOCK: preserve same identity, visible mechanics, body surface, colors, and forest-floor habitat. Controlled action beat: the organism begins nearly still; condensation trembles on the surface; then three metallic spore nodes open a fraction, vibrate, and close again while the root network subtly tightens. Camera: locked low macro-medium shot, shallow depth of field, no camera shake, no cuts, no location change. Neutral natural illumination, tactile moss and metal texture. No growth, no unfolding into new shapes, no transformation, no glow, no extra creature, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Forest Floor Stillness — biomechanical fungus from Biomech Wild.\n\nA forest-floor organism from the biomech wild universe, where mycelium, metallic spore nodes, and pressure-sensitive roots behave like living technology. This test explores rhythm while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical fungus, AI wildlife, mycelium creature design, sci-fi forest organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #fungus #mycelium #aiwildlife #aivideo"
+        },
+        {
+          "id": "FUNGUS-04",
+          "title": "Side Angle Network",
+          "change": "angle",
+          "image_prompt": "Root Mycelium, a photorealistic biomechanical fungus in old growth forest floor, low side angle along root network, old growth forest texture. Organic anatomy fused with pressure-sensitive root network, metallic spore nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic macro documentary shot, 8-12 seconds. Root Mycelium, a photorealistic biomechanical fungus in old growth forest floor, organic anatomy fused with exposed precision mechanics, pressure-sensitive root network and metallic spore nodes. Preserve the uploaded reference exactly: same fungus, same visible root network, same spore nodes, same forest floor. Controlled action beat: from a low side angle, a pressure-sensitive settling motion travels along the visible root network like a slow wave; spore nodes tilt a few degrees and return. Camera: locked low side angle, very slow controlled push-in, no cut, no scene change. Neutral natural forest illumination, realistic shadows. No animals, no attack, no growth, no hidden reveal, no transformation, no glow, no appearing or disappearing parts.",
+          "instagram_caption": "Side Angle Network — biomechanical fungus from Biomech Wild.\n\nA forest-floor organism from the biomech wild universe, where mycelium, metallic spore nodes, and pressure-sensitive roots behave like living technology. This test explores angle while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical fungus, AI wildlife, mycelium creature design, sci-fi forest organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #fungus #mycelium #aiwildlife #aivideo"
+        },
+        {
+          "id": "FUNGUS-05",
+          "title": "Texture Pass",
+          "change": "camera movement",
+          "image_prompt": "Root Mycelium, a photorealistic biomechanical fungus in old growth forest floor, macro texture pass across spore nodes and root network. Organic anatomy fused with pressure-sensitive root network, metallic spore nodes, exposed precision mechanics fused with organic body. Photorealistic wildlife photography, vertical 9:16, rich tactile metal-and-organic texture, shallow depth of field, neutral natural illumination only, realistic shadows, premium hard-surface sci-fi realism, no glow, no light beams, no holograms, no text, no logo, no external armor costume.",
+          "veo_prompt": "Vertical 9:16 cinematic forest-floor macro shot, 8-12 seconds. Root Mycelium, a photorealistic biomechanical fungus on an old growth forest floor. Organic anatomy fused with exposed precision mechanics, pressure-sensitive root network and metallic spore nodes. IMAGE-TO-VIDEO REFERENCE LOCK: same organism, same visible biomechanical design, same body surface, same forest environment. Controlled action beat: the camera makes one very slow texture pass while the organism performs a restrained sequence: spore nodes pulse once, the visible root network tightens, then everything settles. No new biological growth, no reveal, no transformation. Camera: smooth macro slide only, stable framing, no cuts, no sudden reframing, no location change. Neutral natural illumination, tactile moss, bark, metal, and organic surfaces. No glow, no light beams, no extra creatures, no mechanisms appearing or disappearing.",
+          "instagram_caption": "Texture Pass — biomechanical fungus from Biomech Wild.\n\nA forest-floor organism from the biomech wild universe, where mycelium, metallic spore nodes, and pressure-sensitive roots behave like living technology. This test explores camera movement while keeping the creature identity, natural habitat, and visible biomechanical anatomy consistent.\n\nSEO keywords: biomechanical fungus, AI wildlife, mycelium creature design, sci-fi forest organism, digital nature art.\n\nWhich version should evolve next?\n\n#biomechanical #fungus #mycelium #aiwildlife #aivideo"
+        }
+      ]
+    }
+  ]
+}

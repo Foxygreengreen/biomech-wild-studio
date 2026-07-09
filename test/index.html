@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TEST FORMATS — Biomech Wild</title>
+  <style>
+    :root {
+      --bg: #0d0f12;
+      --panel: #151920;
+      --line: #2a3240;
+      --text: #edf1f5;
+      --muted: #98a2b3;
+      --soft: #c8d0dc;
+      --green: #65d6a4;
+      --blue: #7bb7ff;
+      --amber: #f5bf67;
+      --danger: #ff8b8b;
+      --shadow: 0 22px 70px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(101,214,164,.12), transparent 26rem),
+        radial-gradient(circle at 92% 6%, rgba(245,191,103,.10), transparent 24rem),
+        linear-gradient(180deg, #0d0f12 0%, #11141a 100%);
+      color: var(--text);
+    }
+    a { color: inherit; }
+    .shell { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+    .side {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 28px 22px;
+      border-right: 1px solid rgba(255,255,255,.08);
+      background: rgba(13,15,18,.76);
+      backdrop-filter: blur(20px);
+    }
+    .brand { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; }
+    .mark {
+      width: 44px; height: 44px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(101,214,164,.24), rgba(245,191,103,.18));
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--green);
+      font-weight: 800;
+    }
+    .brand h1 { font-size: 1rem; margin: 0; letter-spacing: 0; }
+    .brand p { margin: 2px 0 0; color: var(--muted); font-size: .82rem; }
+    .nav { display: grid; gap: 8px; margin-bottom: 22px; }
+    .nav a {
+      text-decoration: none;
+      padding: 11px 12px;
+      color: var(--soft);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
+      background: rgba(255,255,255,.035);
+    }
+    .nav a.active, .nav a:hover {
+      border-color: rgba(101,214,164,.35);
+      background: rgba(101,214,164,.08);
+      color: var(--text);
+    }
+    .stat {
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,.035);
+      margin-bottom: 10px;
+    }
+    .stat b { display:block; font-size: 1.45rem; line-height: 1; margin-bottom: 4px; }
+    .stat span { color: var(--muted); font-size: .8rem; }
+    .main { padding: 30px; }
+    .hero {
+      min-height: 190px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 20px;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(101,214,164,.18), rgba(245,191,103,.10)),
+        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: end;
+      margin-bottom: 18px;
+    }
+    .hero h2 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 4.3rem); line-height: .95; letter-spacing: 0; }
+    .hero p { max-width: 760px; margin: 0; color: var(--soft); font-size: 1rem; }
+    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .filter {
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 999px;
+      background: rgba(255,255,255,.045);
+      color: var(--soft);
+      cursor: pointer;
+    }
+    .filter.active { color: var(--text); border-color: rgba(101,214,164,.45); background: rgba(101,214,164,.10); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 14px; }
+    .card {
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      overflow: hidden;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+    }
+    .cardTop {
+      padding: 16px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(245,191,103,.18), transparent 8rem),
+        linear-gradient(135deg, rgba(123,183,255,.10), rgba(101,214,164,.08));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .meta { display:flex; justify-content:space-between; gap:10px; color: var(--muted); font-size: .78rem; margin-bottom: 10px; }
+    .card h3 { margin: 0; font-size: 1.15rem; letter-spacing: 0; }
+    .species { margin: 7px 0 0; color: var(--soft); font-size: .92rem; }
+    .body { padding: 14px 16px 16px; display:flex; flex-direction:column; gap: 12px; flex: 1; }
+    .row { display:grid; gap: 5px; }
+    .label { color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; }
+    .text { color: var(--soft); font-size: .92rem; line-height: 1.45; }
+    .pillRow { display:flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      align-self: flex-start;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: .76rem;
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--soft);
+      background: rgba(255,255,255,.045);
+    }
+    .pill.ready { color: var(--green); border-color: rgba(101,214,164,.38); }
+    .pill.need { color: var(--danger); border-color: rgba(255,139,139,.38); }
+    .pill.pause { color: var(--amber); border-color: rgba(245,191,103,.38); }
+    .list { margin: 0; padding-left: 18px; color: var(--soft); font-size: .88rem; line-height: 1.45; }
+    .links { display:flex; flex-wrap:wrap; gap:8px; }
+    .link {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--blue);
+      background: rgba(123,183,255,.08);
+      font-size: .82rem;
+    }
+    .empty {
+      border: 1px dashed rgba(255,255,255,.14);
+      border-radius: 16px;
+      padding: 38px;
+      color: var(--muted);
+      text-align: center;
+      background: rgba(255,255,255,.03);
+    }
+    .promptGrid {
+      display: grid;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    .promptCard {
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 10px;
+      background: rgba(255,255,255,.035);
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .promptHead {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+    .promptTitle {
+      color: var(--text);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+    .promptChange {
+      color: var(--amber);
+      font-size: .76rem;
+      white-space: nowrap;
+    }
+    .copyPrompt {
+      min-height: 36px;
+      border: 1px solid rgba(101,214,164,.45);
+      border-radius: 9px;
+      background: rgba(101,214,164,.12);
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+    }
+    .copyPrompt:hover { background: rgba(101,214,164,.20); }
+    .promptButtons {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(24px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #edf1f5;
+      color: #11141a;
+      transition: .2s ease;
+      box-shadow: var(--shadow);
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    @media (max-width: 820px) {
+      .shell { grid-template-columns: 1fr; }
+      .side { position: relative; height: auto; }
+      .main { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="side">
+      <div class="brand">
+        <div class="mark">T</div>
+        <div>
+          <h1>TEST FORMATS</h1>
+          <p>короткие проверки форматов</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="../index.html">Biomech Wild</a>
+        <a href="../pets.html">Домашние животные</a>
+        <a class="active" href="./">TEST</a>
+      </nav>
+      <div class="stat"><b id="totalCount">0</b><span>тестируемых персонажей</span></div>
+      <div class="stat"><b id="readyCount">0</b><span>source ready</span></div>
+      <div class="stat"><b id="needCount">0</b><span>source needed</span></div>
+    </aside>
+    <main class="main">
+      <section class="hero">
+        <h2>TEST FORMATS</h2>
+        <p>Только выбранные персонажи и форматы, которые сейчас проверяются. Без статистики, без API, без смешивания с основным каталогом.</p>
+      </section>
+      <div class="toolbar">
+        <button class="filter active" data-status="all">Все</button>
+        <button class="filter" data-status="READY_FOR_VARIATION">Ready for variation</button>
+        <button class="filter" data-status="NEEDS_SOURCE">Needs source</button>
+        <button class="filter" data-status="TESTING">Testing</button>
+        <button class="filter" data-status="PAUSED">Paused</button>
+      </div>
+      <section id="grid" class="grid"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast">Скопировано</div>
+  <script>
+    let characters = [];
+    let currentStatus = "all";
+
+    async function loadCharacters() {
+      const response = await fetch("../data/test_characters.json?ts=" + Date.now(), { cache: "no-store" });
+      if (!response.ok) throw new Error(await response.text());
+      const data = await response.json();
+      characters = data.characters || [];
+      setStats();
+      render();
+    }
+
+    function setStats() {
+      document.getElementById("totalCount").textContent = characters.length;
+      document.getElementById("readyCount").textContent = characters.filter(item => item.source_ready).length;
+      document.getElementById("needCount").textContent = characters.filter(item => !item.source_ready).length;
+    }
+
+    function sourcePill(item) {
+      return item.source_ready
+        ? `<span class="pill ready">SOURCE READY</span>`
+        : `<span class="pill need">SOURCE NEEDED</span>`;
+    }
+
+    function statusPill(item) {
+      const cls = item.status === "NEEDS_SOURCE" ? "need" : item.status === "PAUSED" ? "pause" : "ready";
+      return `<span class="pill ${cls}">${escapeHtml(item.status)}</span>`;
+    }
+
+    function links(items) {
+      if (!items || !items.length) return `<span class="text">-</span>`;
+      return `<div class="links">${items.map(path => `<a class="link" href="../${escapeHtml(path)}">${escapeHtml(path)}</a>`).join("")}</div>`;
+    }
+
+    function promptCards(prompts) {
+      if (!prompts || !prompts.length) return `<span class="text">Пока нет prompt-вариаций.</span>`;
+      return `<div class="promptGrid">${prompts.map(prompt => `
+        <div class="promptCard">
+          <div class="promptHead">
+            <div>
+              <div class="promptTitle">${escapeHtml(prompt.id)} — ${escapeHtml(prompt.title)}</div>
+              <div class="text">${escapeHtml(prompt.change || "one change")}</div>
+            </div>
+            <div class="promptChange">8-12s</div>
+          </div>
+          <div class="promptButtons">
+            <button class="copyPrompt" data-copy="${attr(prompt.image_prompt)}">Картинка</button>
+            <button class="copyPrompt" data-copy="${attr(prompt.veo_prompt || prompt.prompt)}">Veo</button>
+            <button class="copyPrompt" data-copy="${attr(prompt.instagram_caption)}">Instagram</button>
+          </div>
+        </div>
+      `).join("")}</div>`;
+    }
+
+    function list(items) {
+      if (!items || !items.length) return `<span class="text">-</span>`;
+      return `<ul class="list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+    }
+
+    function render() {
+      const grid = document.getElementById("grid");
+      const visible = characters.filter(item => currentStatus === "all" || item.status === currentStatus);
+      if (!visible.length) {
+        grid.innerHTML = `<div class="empty">В этом фильтре пока пусто.</div>`;
+        return;
+      }
+      grid.innerHTML = visible.map(item => `
+        <article class="card">
+          <div class="cardTop">
+            <div class="meta"><span>${escapeHtml(item.test_id)}</span><span>${escapeHtml(item.source_card_id || "no source")}</span></div>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p class="species">${escapeHtml(item.species)}</p>
+          </div>
+          <div class="body">
+            <div class="pillRow">${statusPill(item)}${sourcePill(item)}</div>
+            <div class="row"><span class="label">Goal</span><span class="text">${escapeHtml(item.test_goal)}</span></div>
+            <div class="row"><span class="label">Source card</span><span class="text">${escapeHtml(item.source_card_id || "SOURCE NEEDED")}</span></div>
+            <div class="row"><span class="label">Next variation idea</span><span class="text">${escapeHtml(item.next_variation_idea)}</span></div>
+            <div class="row"><span class="label">Keep rules</span>${list(item.keep_rules)}</div>
+            <div class="row"><span class="label">Change rules</span>${list(item.change_rules)}</div>
+            <div class="row"><span class="label">5 prompt variations</span>${promptCards(item.prompts)}</div>
+            <div class="row"><span class="label">Linked cards</span>${links(item.linked_cards)}</div>
+            <div class="row"><span class="label">Notes</span><span class="text">${escapeHtml(item.notes || "")}</span></div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[char]));
+    }
+
+    function attr(value) {
+      return escapeHtml(value).replace(/\n/g, "&#10;");
+    }
+
+    async function copy(value) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(value);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = value;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1100);
+    }
+
+    document.addEventListener("click", event => {
+      const copyButton = event.target.closest(".copyPrompt");
+      if (copyButton) {
+        copy(copyButton.dataset.copy || "");
+        return;
+      }
+      const filter = event.target.closest(".filter");
+      if (!filter) return;
+      currentStatus = filter.dataset.status;
+      document.querySelectorAll(".filter").forEach(item => item.classList.toggle("active", item === filter));
+      render();
+    });
+
+    loadCharacters().catch(() => {
+      document.getElementById("grid").innerHTML = `<div class="empty">Не удалось загрузить data/test_characters.json.</div>`;
+    });
+  </script>
+</body>
+</html>
