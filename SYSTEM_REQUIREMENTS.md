@@ -53,9 +53,9 @@ Each production card should provide:
 - 8s scene.
 - 15s scene.
 - Storyboard.
-- NatGeo encounter.
+- Documentary encounter.
 - Text/overlay.
-- Instagram caption with SEO description and no more than 5 hashtags.
+- Instagram caption with SEO description and exactly 5 hashtags.
 
 ## Video Prompt Rules
 
@@ -68,10 +68,19 @@ Each production card should provide:
 - The camera should be smooth and cinematic.
 - Movement should be natural and controlled.
 - For normal video prompts: one creature, small movement, natural behavior, possible look to camera, possible subtle play to camera.
-- For NatGeo prompts only: two biomechanical species can interact, attack, stalk, flee, or compete.
-- NatGeo species must share a believable habitat.
-- In NatGeo prompts both animals must be biomechanical.
+- For documentary encounter prompts only: two biomechanical species can interact, attack, stalk, flee, or compete.
+- Documentary encounter species must share a believable habitat.
+- In documentary encounter prompts both animals must be biomechanical.
 - Biomechanical mechanisms must remain stable and visible across the shot.
+
+## Instagram Caption Rules
+
+- Every Instagram caption must be an SEO description, not a casual note.
+- Every Instagram caption must include exactly 5 hashtags.
+- One hashtag must always be the animal name, normalized without spaces.
+- Main Studio default hashtag set: `#biomechwild #biomechanical #aicreatures #wildlifeart #{animalname}`.
+- Pets Studio default hashtag set: `#biomechpets #biomechanical #aipets #creaturedesign #{animalname}`.
+- Do not add more or fewer than 5 hashtags.
 
 ## Product Direction
 

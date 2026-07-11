@@ -1,0 +1,5 @@
+data/.backups/
+data/.manual_backups/
+*.tmp
+*.log
+.DS_Store
